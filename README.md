@@ -6,4 +6,6 @@ conda activate pets-env
 
 pip install petpy 
 
-python pets-cart.py
+pip install python-dotenv
+
+python pets.py

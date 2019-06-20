@@ -1,9 +1,13 @@
-import petpy 
+from petpy import Petfinder
+import pandas
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
-pf = Petfinder(JgABEROxapfiLrb1pjAHvsoZibygsYhpKiQ1WlmYZgqDxVAou8)
+key = os.environ.get('API_KEY')
+print(key)
 
-wa_female_cats = pf.pet_find(location='Seattle', 
-                             animal='cat', 
-                             sex='Female', 
-                             count=100, 
-                             return_df=True) 
+pf = Petfinder(key)
+
+cats = pf.breed_list('cat')
+print(cats)
