@@ -1,10 +1,9 @@
 # get_a_pet
 
-conda create -n pets-env python=3.7
+conda create -n pets-env-7 python=3.7
+conda activate pets-env-7
 
-conda activate pets-env
-
-pip install petpy 
+pip install requests 
 
 pip install python-dotenv
 
