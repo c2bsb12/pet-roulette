@@ -47,7 +47,8 @@ parsed_response = get_response(postcode)
 
 num_animals = len(parsed_response["animals"])
 my_random_animal = parsed_response["animals"][random.randint(0, num_animals)]
-print("type: " + my_random_animal["type"]);
+#print("type: " + my_random_animal["type"])
+print("breed: " + my_random_animal["breeds"]["primary"])
 
 #found_animal = None
 #for animal in parsed_response["animals"]:
@@ -66,6 +67,7 @@ print("type: " + my_random_animal["type"]);
 
 formatted_time_now = time_now.strftime("%Y-%m-%d %H:%M:%S") #> '2019-03-03 14:45:27'
 
+pet_type = my_random_animal["type"]
 
 #DISPLAY RESULTS
 
@@ -76,7 +78,7 @@ print(f"REQUEST AT: {formatted_time_now}")
 print("---------------------------------")
 print(f"Pet Location: {postcode}")
 print("---------------------------------")
-print("Your future best friend: ")
+print("Your future best friend: "+ (pet_type))
 print("---------------------------------")
 print("Nearest adoption center: ")
 print("---------------------------------")
