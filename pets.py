@@ -11,11 +11,13 @@ TOKEN = os.environ.get("PETFINDER_ACCESS_TOKEN")
 #API_KEY = os.environ.get('API_KEY')
 
 request_url = "https://api.petfinder.com/v2/animals"
+request_url2 = "https://api.petfinder.com/v2/organizations"
 
 headers = {"Authorization": f"Bearer {TOKEN}"}
 
 def get_response(postcode):
-    request_url = f"https://api.petfinder.com/v2/animals"
+    request_url = "https://api.petfinder.com/v2/animals"
+    request_url2 = "https://api.petfinder.com/v2/organizations"
     response = requests.get(request_url, headers=headers, params={'location': postcode})
     parsed_response = json.loads(response.text)
     return parsed_response
@@ -71,6 +73,7 @@ pet_type = my_random_animal["type"]
 pet_breed = my_random_animal["breeds"]["primary"]
 pet_name = my_random_animal["name"]
 pet_zip = my_random_animal["contact"]["address"]["postcode"]
+find_pet = my_random_animal["url"]
 #pet_photos = my_random_animal["photos"]["medium"]
 
 
@@ -92,7 +95,7 @@ print("Breed: "+ (pet_breed))
 #print("---------------------------------")
 #print("Pet picture: "+ str(pet_photos))
 print("---------------------------------")
-print("Nearest adoption center: ")
+print("Find " +(pet_name)+ ":" +" "+ (find_pet))
 print("---------------------------------")
 print("Thank you for using Get-A-Pet!")
    
