@@ -69,6 +69,11 @@ formatted_time_now = time_now.strftime("%Y-%m-%d %H:%M:%S") #> '2019-03-03 14:45
 
 pet_type = my_random_animal["type"]
 pet_breed = my_random_animal["breeds"]["primary"]
+pet_name = my_random_animal["name"]
+pet_zip = my_random_animal["contact"]["address"]["postcode"]
+#pet_photos = my_random_animal["photos"]["medium"]
+
+
 
 #DISPLAY RESULTS
 
@@ -77,13 +82,15 @@ print("Searching for pets in your area...")
 print("---------------------------------")
 print(f"REQUEST AT: {formatted_time_now}")
 print("---------------------------------")
-print(f"Pet Location: {postcode}")
+print("Pet Location: "+ (pet_zip))
 print("---------------------------------")
-print("Your future best friend: "+ (pet_type))
+print("your future best friend: "+ (pet_name))
+print("---------------------------------")
+print("Pet type: "+ (pet_type))
 print("---------------------------------")
 print("Breed: "+ (pet_breed))
-print("---------------------------------")
-print("Picture of your pet: ")
+#print("---------------------------------")
+#print("Pet picture: "+ str(pet_photos))
 print("---------------------------------")
 print("Nearest adoption center: ")
 print("---------------------------------")
