@@ -11,7 +11,7 @@ TOKEN = os.environ.get("PETFINDER_ACCESS_TOKEN")
 #API_KEY = os.environ.get('API_KEY')
 
 request_url = "https://api.petfinder.com/v2/animals"
-request_url2 = "https://api.petfinder.com/v2/organizations"
+#request_url2 = "https://api.petfinder.com/v2/organizations"
 
 headers = {"Authorization": f"Bearer {TOKEN}"}
 
@@ -33,8 +33,6 @@ def transform_response(parsed_response):
 
 #parsed_response["animals"][0]["contact"]["address"]["postcode"]
 
-
-
 #breakpoint()
 #exit()
 
@@ -42,13 +40,17 @@ def transform_response(parsed_response):
 
 time_now = datetime.datetime.now() #> datetime.datetime(2019, 3, 3, 14, 44, 57, 139564)
 
-print("Welcome to Get-A-Pet")
+print("*** Welcome to Pet Roulette ***")
 print("---------------------------------")
-postcode = input ("Please input your zip code to find pets in your area: ")
+postcode = input ("Please input your zip code to find adoptable pets in your area: ")
+
 parsed_response = get_response(postcode)
+
 
 num_animals = len(parsed_response["animals"])
 my_random_animal = parsed_response["animals"][random.randint(0, num_animals)]
+
+
 #print("type: " + my_random_animal["type"])
 #print("breed: " + my_random_animal["breeds"]["primary"])
 
@@ -61,8 +63,6 @@ my_random_animal = parsed_response["animals"][random.randint(0, num_animals)]
       #  break
         
 #print(found_animal)
-        
-
     
 
 #OUTPUTS
@@ -76,10 +76,10 @@ pet_zip = my_random_animal["contact"]["address"]["postcode"]
 find_pet = my_random_animal["url"]
 #pet_photos = my_random_animal["photos"]["medium"]
 
+options=pet_zip
 
 
 #DISPLAY RESULTS
-
 
 print("Searching for pets in your area...")
 print("---------------------------------")

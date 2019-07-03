@@ -2,6 +2,13 @@
 
 Pet-Roulette is a application which allows the user to pull information about a randomly generated adoptable pet within the vicinity of a selected zipcode
 
+##Attributes
+-Data was accessed through the Pet Finder API https://www.petfinder.com/developers/.
+-Some of the code was also constructed using set up instructions on the API website.
+-The README file was constructed using examples from past projects in Professor Rossetti's Python Programming & Software Development class to inform structure.
+-Some input was received from family friend, Waldo Bronchart, on how to use the random module.
+
+
 ## Prerequisites
 
   + Anaconda 3.7
